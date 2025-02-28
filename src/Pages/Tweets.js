@@ -3,7 +3,8 @@ import { dummyTweets } from '../static/dummyData';
 import './Tweets.css';
 // ! 위 코드는 수정하지 않습니다.
 
-// TODO - import문을 이용하여 Footer 컴포넌트를 불러오세요.
+// ✅ TODO 해결: Footer 컴포넌트를 import하여 불러옴
+import Footer from '../Footer';
 
 const Tweets = () => {
   return (
@@ -21,12 +22,13 @@ const Tweets = () => {
           </div>
         </div>
       </div>
+
       <ul className="tweets">
         {dummyTweets.map((tweet) => {
           return (
             <li className="tweet" id={tweet.id} key={tweet.id}>
               <div className="tweet__profile">
-                <img src={tweet.picture} />
+                <img src={tweet.picture} alt="profile" />
               </div>
               <div className="tweet__content">
                 <div className="tweet__userInfo">
@@ -39,7 +41,9 @@ const Tweets = () => {
           );
         })}
       </ul>
-      {/* TODO - Footer 컴포넌트를 작성합니다. */}
+
+      {/* ✅ TODO 해결: Footer 컴포넌트를 추가하여 트윗 목록 아래에 배치 */}
+      <Footer />
     </div>
   );
 };
